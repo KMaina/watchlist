@@ -37,8 +37,8 @@ class Review(db.Model):
 
 
     def save_review(self):
-        db.session.add(self)
-        db.session.commit()
+        db.session.add(self) # git commit
+        db.session.commit() # git push
 
 
 
@@ -104,3 +104,9 @@ class Role(db.Model):
 
     def __repr__(self):
         return f'User {self.name}'
+
+class Staff(db.Model):
+    __tablename__ = 'staff'
+
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.String(255))
